@@ -1,6 +1,7 @@
 <?php
 session_start();
-include "./assets/php/connection.php";
+include "./assets/php/login_validation.php";
+auto_login();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,8 @@ include "./assets/php/connection.php";
                     <h1>Sign in</h1>
                     <input type="text" name="username" placeholder="Username" class="form-control">
                     <input type="password" name="password" placeholder="Password" class="form-control">
-                    <button type="submit" class="btn btn-dark">Sign in</button>
+                    <span class="text-center text-danger"><?php include "./assets/php/login.php" ?></span>
+                    <button type="submit" class="btn btn-dark" name="login">Sign in</button>
                     <a href="#" data-bs-toggle="modal" data-bs-target="#signup">Sign up now!</a>
                 </div>
             </div>
