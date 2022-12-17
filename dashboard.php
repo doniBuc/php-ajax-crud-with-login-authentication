@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "./assets/php/login_validation.php";
+validate_session();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
