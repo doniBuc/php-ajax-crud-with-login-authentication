@@ -23,6 +23,7 @@
                     <h1>Accounts</h3>
                         <hr>
                 </header>
+                <!-- Data Table w/ Search -->
                 <input type="text" class="form-control" placeholder="Search">
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">
@@ -70,7 +71,7 @@
         </div>
     </main>
 
-    <!-- Edit Form -->
+    <!-- Edit Modal -->
     <div class="modal fade" id="editForm" tabindex="-1" aria-labelledby="editFormLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -78,8 +79,9 @@
                     <h1 class="modal-title fs-5" id="editFormLabel">Edit Account</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form>
+                <!-- Edit Form -->
+                <form action="./accounts.php" method="post">
+                    <div class="modal-body">
                         <div class="mb-3">
                             <label for="edit_username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="edit_username" name="edit_username" placeholder="Username">
@@ -92,12 +94,12 @@
                             <label for="edit_password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="edit_password" name="edit_password" placeholder="Password">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
