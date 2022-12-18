@@ -16,7 +16,7 @@ validate_session();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
-    <title>Dashboard</title>
+    <title>Accounts</title>
 </head>
 
 <body>
@@ -64,18 +64,6 @@ validate_session();
                 <!-- Edit Form -->
                 <form action="./accounts.php" method="post">
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="edit_username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="edit_username" name="edit_username" placeholder="Username">
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="edit_email" name="edit_email" placeholder="Email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="edit_password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="edit_password" name="edit_password" placeholder="Password">
-                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -86,7 +74,7 @@ validate_session();
         </div>
     </div>
 
-    <script src="./assets/js/tables/accounts_data.js"></script>
+    <script src="./assets/js/ajax/accounts_data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 </body>
 

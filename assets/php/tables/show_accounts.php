@@ -2,7 +2,7 @@
 if(isset($_POST['input'])) {
     include '../connection.php';
     $input = $_POST['input'];
-    $query =
+    $sql =
         "SELECT account_id, username, password, email, creation_date, account_type
     FROM tb_accounts
     WHERE account_id LIKE '{$input}%'
@@ -12,7 +12,7 @@ if(isset($_POST['input'])) {
     OR creation_date LIKE '{$input}%'
     OR account_type LIKE '{$input}%'
     ORDER BY account_id";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($conn, $sql);
     $count = mysqli_num_rows($result);
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         ?>
@@ -24,7 +24,7 @@ if(isset($_POST['input'])) {
             <td><?php echo $row["creation_date"] ?></td>
             <td><?php echo $row["account_type"] ?></td>
             <td>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
+                <button data-id="<?php echo $row["account_id"] ?>" class="edit-account btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
                 <button class="btn btn-danger">Delete</button>
             </td>
         </tr>
