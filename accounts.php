@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "./assets/php/login_validation.php";
+include "./assets/php/logout.php";
 validate_session();
 ?>
 

@@ -17,12 +17,15 @@ if (isset($_POST['login'])) {
         $_SESSION['password'] = $password;
         $_SESSION['account_id'] = $account_id;
         $_SESSION['account_type'] = $account_type;
-        setcookie("ID", $_SESSION['account_id'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication/");
-        setcookie("Password", $_SESSION['password'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication/");
+        // Change the cookies names and link accordingly
+        setcookie("ID", $_SESSION['account_id'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication");
+        setcookie("Username", $_SESSION['username'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication");
+        setcookie("Password", $_SESSION['password'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication");
         header("Location: dashboard.php");
-        mysqli_close($conn);
+        
     } else {
         echo 'Your Username or Password is incorrect!';
     }
+    mysqli_close($conn);
 }
 ?>
