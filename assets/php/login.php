@@ -1,5 +1,5 @@
 <?php
-include "./connection.php";
+include "connection.php";
 
 // Login process
 if (isset($_POST['login'])) {
