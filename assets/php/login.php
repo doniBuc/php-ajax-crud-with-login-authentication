@@ -1,4 +1,6 @@
 <?php
+include "./connection.php";
+
 // Login process
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -18,6 +20,7 @@ if (isset($_POST['login'])) {
         setcookie("ID", $_SESSION['account_id'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication/");
         setcookie("Password", $_SESSION['password'], time() + 86400, "/", "http://localhost/Projects/github/php-scrud-with-login-authentication/");
         header("Location: dashboard.php");
+        mysqli_close($conn);
     } else {
         echo 'Your Username or Password is incorrect!';
     }
