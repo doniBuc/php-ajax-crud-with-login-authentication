@@ -31,7 +31,7 @@ validate_session();
                         <hr>
                 </header>
                 <!-- Data Table w/ Search -->
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" id="search_records" placeholder="Search">
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">
                         <thead>
@@ -44,33 +44,8 @@ validate_session();
                                 <th>Account</th>
                                 <th>Modify</th>
                             </tr>
-
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Red</td>
-                                <td>password</td>
-                                <td>red@gmail.com</td>
-                                <td>12/17/2022</td>
-                                <td>User</td>
-                                <td>
-                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Blue</td>
-                                <td>password</td>
-                                <td>blue@gmail.com</td>
-                                <td>12/17/2022</td>
-                                <td>User</td>
-                                <td>
-                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
-                                    <button class="btn btn-danger">Delete</button>
-                                </td>
-                            </tr>
+                        <tbody id="search_results">
                         </tbody>
                     </table>
                 </div>
@@ -78,8 +53,8 @@ validate_session();
         </div>
     </main>
 
-    <!-- Edit Modal -->
     <div class="modal fade" id="editForm" tabindex="-1" aria-labelledby="editFormLabel" aria-hidden="true">
+        <!-- Edit Modal -->
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -111,6 +86,7 @@ validate_session();
         </div>
     </div>
 
+    <script src="./assets/js/tables/accounts_data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 </body>
 
