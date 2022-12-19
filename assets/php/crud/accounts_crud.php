@@ -26,7 +26,7 @@ if(isset($_POST['input'])) {
             <td><?php echo $row["creation_date"] ?></td>
             <td><?php echo $row["account_type"] ?></td>
             <td>
-            <button data-id="<?php echo $row["account_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
+                <button data-id="<?php echo $row["account_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
                 <button data-id="<?php echo $row["account_id"] ?>" class="delete-data btn btn-danger"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
@@ -74,7 +74,7 @@ if (isset($_POST['primary_id'])
     $primary_id = $_POST['primary_id'];
     $edit_username = $_POST['edit_username'];
     $edit_email = $_POST['edit_email'];
-    $edit_password = $_POST['edit_password'];
+    $edit_password = mysqli_real_escape_string($conn, $_POST['edit_password']);
     $sql = "UPDATE tb_accounts SET username='$edit_username', password='$edit_password', email='$edit_email' WHERE account_id='$primary_id'";
     if (mysqli_query($conn, $sql)) {
         echo "success";
