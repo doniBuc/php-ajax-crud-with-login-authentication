@@ -10,11 +10,11 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 ?>
     <div class="mb-3">
         <label for="edit_record" class="form-label">Record</label>
-        <input type="text" class="form-control" id="edit_username" name="edit_username" placeholder="Username" value="<?php echo $row['username'] ?>">
+        <input type="text" class="form-control" id="edit_record" name="edit_record" placeholder="Record" value="<?php echo $row['record'] ?>">
     </div>
     <div class="mb-3">
         <label for="edit_details">Details</label>
-        <textarea class="form-control" id="edit_details" rows="3" placeholder="Details" value="<?php echo $row['email'] ?>"></textarea>
+        <textarea class="form-control" id="edit_details" rows="3" placeholder="Details" value="<?php echo $row['details'] ?>"></textarea>
     </div>
 <?php
 }
