@@ -1,3 +1,5 @@
+// No changes are required in this part when copying this code for other tables/pages
+// The only changes required are the file names for php crud and id values for adding and updating data
 $(document).ready(function () {
     // Calls the respective constants when necessary
     displayTable();
@@ -10,12 +12,12 @@ $(document).ready(function () {
         displayEdit(primary_id);
     });
 
-    $("#form_add_record").submit(function (e) {
+    $("#form_add").submit(function (e) {
         e.preventDefault();
         insertData();
     });
 
-    $("#form_edit_record").submit(function (e) {
+    $("#form_edit").submit(function (e) {
         e.preventDefault();
         updateData();
     });
@@ -23,19 +25,7 @@ $(document).ready(function () {
     // Show confirmation first before deleting data
     $(document).on("click", ".delete-data", function () {
         let delete_id = $(this).data('id');
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                deleteData(delete_id);
-            }
-        })
+        deleteConfirmation(delete_id);
     });
 });
 
@@ -78,12 +68,12 @@ const insertData = () => {
         method: "POST",
         data: {
             record: record,
-            details: details,
+            details: details
         },
         success: function (data) {
             displayTable();
             if (data == "success") {
-                $('#form_add_record')[0].reset();
+                $('#form_add')[0].reset();
                 addAlert();
             } else {
                 errorAlert();
@@ -103,12 +93,12 @@ const updateData = () => {
         data: {
             primary_id: primary_id,
             edit_record: edit_record,
-            edit_details: edit_details,
+            edit_details: edit_details
         },
         success: function (data) {
             displayTable();
-            $('#form_edit_record')[0].reset();
-            $('#editForm').modal('hide');
+            $('#editModal').modal('hide');
+            $('#form_edit')[0].reset();
             if (data == "success") {
                 editAlert();
             } else {
@@ -124,7 +114,7 @@ const deleteData = (delete_id) => {
         url: "./assets/php/crud/records_crud.php",
         method: "POST",
         data: {
-            delete_id: delete_id,
+            delete_id: delete_id
         },
         success: function (data) {
             displayTable();
