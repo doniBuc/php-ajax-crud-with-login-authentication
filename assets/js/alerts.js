@@ -29,7 +29,42 @@ function deleteAlert() {
 function errorAlert() {
     Swal.fire({
         icon: 'error',
-        title: 'Error',
+        title: 'Error!',
         text: 'Your action cannot be processed! Try something else...',
     });
+}
+
+// Alert when registration is successful
+function registrationAlert() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Registration Complete!',
+        text: 'You have successfully created an account!',
+    });
+}
+
+// Alert when password and confirm password is not the same
+function passwordConfirmAlert() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Does not match!',
+        text: 'Your password and confirm password do not match!',
+    });
+}
+
+// Confirm first before deleting data
+function deleteConfirmation(delete_id) {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deleteData(delete_id);
+        }
+    })
 }
