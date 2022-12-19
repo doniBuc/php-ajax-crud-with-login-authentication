@@ -33,7 +33,7 @@ validateSession();
                 </header>
                 <!-- Data Table w/ Search -->
                 <div class="datatable-container">
-                    <form class="card" id="form_add_record">
+                    <form class="card" id="form_add">
                         <h1 class="fs-4">Add Record</h1>
                         <div class="mb-3">
                             <label for="record" class="form-label">Record</label>
@@ -68,16 +68,16 @@ validateSession();
         </div>
     </main>
 
-    <div class="modal fade" id="editForm" tabindex="-1" aria-labelledby="editFormLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
         <!-- Edit Modal -->
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="editFormLabel">Edit Record</h1>
+                    <h1 class="modal-title fs-5" id="editModalLabel">Edit Record</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Edit Form -->
-                <form id="form_edit_record">
+                <form id="form_edit">
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
