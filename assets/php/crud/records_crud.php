@@ -37,14 +37,31 @@ if(isset($_POST['input'])) {
     mysqli_close($conn);
 }
 
+// Inserts a new data
+if (isset($_POST['record'])
+&& isset($_POST['details'])) {
+    include '../connection.php';
+    // mysqli_real_escape_string() escapes the special characters that the users will input that will otherwise become an error
+    $record = mysqli_real_escape_string($conn, $_POST['record']);
+    $details = mysqli_real_escape_string($conn, $_POST['details']);
+    $sql = "INSERT INTO tb_records VALUES (null, '$record', '$details', CURDATE())";
+    if (mysqli_query($conn, $sql)) {
+        echo "success";
+    } else {
+        echo "error";
+    }
+    mysqli_close($conn);
+}
+
 // Updates the data
 if (isset($_POST['primary_id'])
 && isset($_POST['edit_record'])
 && isset($_POST['edit_details'])) {
     include '../connection.php';
     $primary_id = $_POST['primary_id'];
-    $edit_record = $_POST['edit_record'];
-    $edit_details = $_POST['edit_details'];
+    // mysqli_real_escape_string() escapes the special characters that the users will input that will otherwise become an error
+    $edit_record = mysqli_real_escape_string($conn, $_POST['edit_record']);
+    $edit_details = mysqli_real_escape_string($conn, $_POST['edit_details']);
     $sql = "UPDATE tb_records SET record='$edit_record', details='$edit_details' WHERE record_id='$primary_id'";
     if (mysqli_query($conn, $sql)) {
         echo "success";

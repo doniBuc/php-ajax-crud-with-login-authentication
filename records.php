@@ -33,17 +33,17 @@ validateSession();
                 </header>
                 <!-- Data Table w/ Search -->
                 <div class="datatable-container">
-                    <form class="card">
+                    <form class="card" id="form_add_record">
                         <h1 class="fs-4">Add Record</h1>
                         <div class="mb-3">
                             <label for="record" class="form-label">Record</label>
-                            <input type="text" class="form-control" id="record" name="record" placeholder="Record">
+                            <input type="text" class="form-control" id="record" placeholder="Record" required>
                         </div>
                         <div class="mb-3">
                             <label for="details">Details</label>
-                            <textarea class="form-control" id="details" rows="3" placeholder="Details"></textarea>
+                            <textarea class="form-control" id="details" rows="3" placeholder="Details" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="add-confirm btn btn-primary">Confirm</button>
                     </form>
                     <div class="w-100">
                         <input type="text" class="form-control" id="search_records" placeholder="Search">
@@ -77,12 +77,12 @@ validateSession();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Edit Form -->
-                <form>
+                <form id="form_edit_record">
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="edit-confirm btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                        <button type="submit" class="edit-confirm btn btn-primary">Save changes</button>
                     </div>
                 </form>
             </div>
