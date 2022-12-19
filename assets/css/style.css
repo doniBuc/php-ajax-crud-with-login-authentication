@@ -7,6 +7,18 @@
     text-decoration: none !important;
 }
 
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.8em; }
+h6 { font-size: 0.7em; }
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body {
     font-size: 1rem;
     font-family: "Poppins", sans-serif;
@@ -22,7 +34,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    max-width: 5rem;
+    max-width: 4rem;
     background-color: aliceblue;
     text-align: center;
 }
@@ -30,15 +42,12 @@ body {
 .sidebar a {
     color: white;
     display: block;
+    padding: 1rem 0;
 }
 
 .sidebar a:hover {
-    color: gray;
-}
-
-.sidebar li {
-    margin: 2rem 0;
-    cursor: pointer;
+    color: white;
+    background-color: gray;
 }
 
 @media only screen and (max-width: 600px) {
@@ -67,7 +76,7 @@ body {
 }
 
 .main-content {
-    margin-left: 5rem;
+    margin-left: 4rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -76,7 +85,29 @@ body {
     }
 }
 
-/* Buttons */
+.datatable-container {
+    display: flex;
+    flex-flow: row;
+}
+
+.datatable-container form {
+    padding: 2em;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 1em 0 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .datatable-container {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .datatable-container form {
+        padding: 1.5em;
+        margin: 0 0 1em 0;
+    }
+}
 
 /* Panels */
 .box {
@@ -111,5 +142,3 @@ body {
 .grid-box .content {
     display: block;
 }
-
-/* Hovers */
