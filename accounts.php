@@ -63,7 +63,7 @@ validateSession();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Edit Form -->
-                <form action="./accounts.php" method="post">
+                <form>
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
