@@ -1,22 +1,36 @@
+// No changes are required in this part when copying this code for other tables/pages
+// The only changes required are the file names for php crud and id values for adding and updating data
 $(document).ready(function () {
-    // Loads the data and enables search functionality
+    // Calls the respective constants when necessary
     displayTable();
     $("#search_records").keyup(function () {
         displayTable();
     });
 
-    // Displays the current data in modal for updating
     $(document).on("click", ".edit-data", function () {
-        updateModal();
+        let primary_id = $(this).data('id');
+        displayEdit(primary_id);
     });
 
-    // Updates the data
-    $(document).on("click", ".edit-confirm", function () {
-        update();
+    $("#form_add").submit(function (e) {
+        e.preventDefault();
+        insertData();
+    });
+
+    $("#form_edit").submit(function (e) {
+        e.preventDefault();
+        updateData();
+    });
+
+    // Show confirmation first before deleting data
+    $(document).on("click", ".delete-data", function () {
+        let delete_id = $(this).data('id');
+        deleteConfirmation(delete_id);
     });
 });
 
-// Loads the data and enables search functionality
+// ========== Constants ==========
+// Displays data with search function
 const displayTable = () => {
     let input = $("#search_records").val();
     $.ajax({
@@ -31,9 +45,8 @@ const displayTable = () => {
     });
 }
 
-// Displays the current data in modal for updating
-const updateModal = () => {
-    let primary_id = $(".edit-data").data('id');
+// Displays data in edit modal
+const displayEdit = (primary_id) => {
     $.ajax({
         url: "./assets/php/modals/accounts_modal.php",
         method: "POST",
@@ -46,9 +59,42 @@ const updateModal = () => {
     });
 }
 
-// Fetch the data from the form and send it to the crud processing file to edit data
-const update = () => {
-    let primary_id = $(".edit-data").data('id');
+// Adds a new data
+const insertData = () => {
+    let username = $("#username").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let confirm_password = $("#confirm_password").val();
+    $.ajax({
+        url: "./assets/php/crud/accounts_crud.php",
+        method: "POST",
+        data: {
+            username: username,
+            email: email,
+            password: password,
+            confirm_password: confirm_password
+        },
+        success: function (data) {
+            displayTable();
+            if (data == "success") {
+                $('#addModal').modal('hide');
+                $('#form_add')[0].reset();
+                registrationAlert();
+            } else if (data == "error_confirm") {
+                $('#password').val("");
+                $('#confirm_password').val("");
+                passwordConfirmAlert();  
+            } else {
+                $('#form_add')[0].reset();
+                errorAlert();
+            }
+        }
+    });
+}
+
+// Updates the data
+const updateData = () => {
+    let primary_id = $("#primary_id").val();
     let edit_username = $("#edit_username").val();
     let edit_email = $("#edit_email").val();
     let edit_password = $("#edit_password").val();
@@ -63,8 +109,29 @@ const update = () => {
         },
         success: function (data) {
             displayTable();
+            $('#editModal').modal('hide');
+            $('#form_edit')[0].reset();
             if (data == "success") {
                 editAlert();
+            } else {
+                errorAlert();
+            }
+        }
+    });
+}
+
+// Deletes a data
+const deleteData = (delete_id) => {
+    $.ajax({
+        url: "./assets/php/crud/accounts_crud.php",
+        method: "POST",
+        data: {
+            delete_id: delete_id
+        },
+        success: function (data) {
+            displayTable();
+            if (data == "success") {
+                deleteAlert();
             } else {
                 errorAlert();
             }
