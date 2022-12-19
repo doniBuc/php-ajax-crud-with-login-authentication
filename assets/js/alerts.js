@@ -3,7 +3,16 @@ function editAlert() {
     Swal.fire({
         icon: 'success',
         title: 'Record Updated!',
-        text: 'Record has beed updated successfully!',
+        text: 'Record has been updated successfully!',
+    });
+}
+
+// Alert when a record has been added to the table
+function addAlert() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Record Added!',
+        text: 'Record has been added successfully!',
     });
 }
 
