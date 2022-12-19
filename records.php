@@ -31,7 +31,7 @@ validateSession();
                     <h1>Records</h3>
                         <hr>
                 </header>
-                <!-- Data Table w/ Search -->
+                <!-- Add Form -->
                 <div class="datatable-container">
                     <form class="card" id="form_add">
                         <h1 class="fs-4">Add Record</h1>
@@ -45,6 +45,7 @@ validateSession();
                         </div>
                         <button type="submit" class="add-confirm btn btn-primary">Confirm</button>
                     </form>
+                    <!-- Data Table w/ Search -->
                     <div class="w-100">
                         <input type="text" class="form-control" id="search_records" placeholder="Search">
                         <div class="table-responsive">
