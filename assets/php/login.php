@@ -5,7 +5,7 @@ include "connection.php";
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $sql = "SELECT account_id, account_type FROM tb_accounts WHERE username='$username' AND password='$password' limit 1";
+    $sql = "SELECT account_id, account_type FROM tb_accounts WHERE BINARY username='$username' AND BINARY password='$password' limit 1";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $account_id = $row['account_id'];
