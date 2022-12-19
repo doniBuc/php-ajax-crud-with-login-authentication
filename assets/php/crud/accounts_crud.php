@@ -1,4 +1,5 @@
 <?php
+// Displays the data table with enabled search functionality
 if(isset($_POST['input'])) {
     include '../connection.php';
     $input = $_POST['input'];
@@ -24,7 +25,7 @@ if(isset($_POST['input'])) {
             <td><?php echo $row["creation_date"] ?></td>
             <td><?php echo $row["account_type"] ?></td>
             <td>
-                <button data-id="<?php echo $row["account_id"] ?>" class="edit-account btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
+                <button data-id="<?php echo $row["account_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
                 <button class="btn btn-danger">Delete</button>
             </td>
         </tr>
@@ -36,6 +37,25 @@ if(isset($_POST['input'])) {
             <td colspan='7'>There are no records.</td>
         </tr>
         <?php
+    }
+    mysqli_close($conn);
+}
+
+// Updates the data
+if (isset($_POST['account_id'])
+&& isset($_POST['edit_username'])
+&& isset($_POST['edit_email'])
+&& isset($_POST['edit_password'])) {
+    include '../connection.php';
+    $account_id = $_POST['account_id'];
+    $edit_username = $_POST['edit_username'];
+    $edit_email = $_POST['edit_email'];
+    $edit_password = $_POST['edit_password'];
+    $sql = "UPDATE tb_accounts SET username='$edit_username', password='$edit_password', email='$edit_email' WHERE account_id='$account_id'";
+    if (mysqli_query($conn, $sql)) {
+        echo "success";
+    } else {
+        echo "error";
     }
     mysqli_close($conn);
 }
