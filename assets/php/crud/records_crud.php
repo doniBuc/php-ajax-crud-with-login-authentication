@@ -71,6 +71,7 @@ if (isset($_POST['primary_id'])
     mysqli_close($conn);
 }
 
+// Deletes an existing data
 if (isset($_POST['delete_id'])) {
     include '../connection.php';
     $primary_id = $_POST['delete_id'];
