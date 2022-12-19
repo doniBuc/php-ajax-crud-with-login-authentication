@@ -1,23 +1,23 @@
 $(document).ready(function () {
     // Loads the data and enables search functionality
-    displayAccountTable();
+    displayTable();
     $("#search_records").keyup(function () {
-        displayAccountTable();
+        displayTable();
     });
 
     // Displays the current data in modal for updating
     $(document).on("click", ".edit-data", function () {
-        editAccountData();
+        updateModal();
     });
 
     // Updates the data
     $(document).on("click", ".edit-confirm", function () {
-        editAccount();
+        update();
     });
 });
 
 // Loads the data and enables search functionality
-const displayAccountTable = () => {
+const displayTable = () => {
     let input = $("#search_records").val();
     $.ajax({
         url: "./assets/php/crud/accounts_crud.php",
@@ -32,13 +32,13 @@ const displayAccountTable = () => {
 }
 
 // Displays the current data in modal for updating
-const editAccountData = () => {
-    let account_id = $(".edit-data").data('id');
+const updateModal = () => {
+    let primary_id = $(".edit-data").data('id');
     $.ajax({
         url: "./assets/php/modals/accounts_modal.php",
         method: "POST",
         data: {
-            account_id: account_id
+            primary_id: primary_id
         },
         success: function (data) {
             $(".modal-body").html(data);
@@ -47,8 +47,8 @@ const editAccountData = () => {
 }
 
 // Fetch the data from the form and send it to the crud processing file to edit data
-const editAccount = () => {
-    let account_id = $(".edit-data").data('id');
+const update = () => {
+    let primary_id = $(".edit-data").data('id');
     let edit_username = $("#edit_username").val();
     let edit_email = $("#edit_email").val();
     let edit_password = $("#edit_password").val();
@@ -56,13 +56,13 @@ const editAccount = () => {
         url: "./assets/php/crud/accounts_crud.php",
         method: "POST",
         data: {
-            account_id: account_id,
+            primary_id: primary_id,
             edit_username: edit_username,
             edit_email: edit_email,
             edit_password: edit_password
         },
         success: function (data) {
-            displayAccountTable();
+            displayTable();
             if (data == "success") {
                 editAlert();
             } else {

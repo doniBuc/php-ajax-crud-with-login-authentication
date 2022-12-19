@@ -42,16 +42,16 @@ if(isset($_POST['input'])) {
 }
 
 // Updates the data
-if (isset($_POST['account_id'])
+if (isset($_POST['primary_id'])
 && isset($_POST['edit_username'])
 && isset($_POST['edit_email'])
 && isset($_POST['edit_password'])) {
     include '../connection.php';
-    $account_id = $_POST['account_id'];
+    $primary_id = $_POST['primary_id'];
     $edit_username = $_POST['edit_username'];
     $edit_email = $_POST['edit_email'];
     $edit_password = $_POST['edit_password'];
-    $sql = "UPDATE tb_accounts SET username='$edit_username', password='$edit_password', email='$edit_email' WHERE account_id='$account_id'";
+    $sql = "UPDATE tb_accounts SET username='$edit_username', password='$edit_password', email='$edit_email' WHERE account_id='$primary_id'";
     if (mysqli_query($conn, $sql)) {
         echo "success";
     } else {
