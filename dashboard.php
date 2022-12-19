@@ -2,6 +2,7 @@
 session_start();
 include "./assets/php/login_validation.php";
 include "./assets/php/logout.php";
+include "./assets/php/dashboard_counter.php";
 validateSession();
 ?>
 
@@ -30,42 +31,63 @@ validateSession();
                     <h1>Dashboard</h3>
                     <hr>
                 </header>
-                <p style="font-size: 1.5rem;">Welcome, Admin!</p>
+                <p style="font-size: 1.5rem;">Welcome, <?php echo $_SESSION["username"] ?>!</p>
                 <div class="grid-ish">
+                    <!-- Shows total users -->
                     <div class="grid-box">
                         <div class="content">
-                            <p style="font-size: 2rem;">0</p>
+                            <p style="font-size: 2rem;"><?php userCount() ?></p>
                             <p>Users</p>
                         </div>
                         <div class="content">
                             <i class="fa-solid fa-users fa-4x"></i>
                         </div>
                     </div>
+                    <!-- Shows total records -->
                     <div class="grid-box">
                         <div class="content">
-                            <p style="font-size: 2rem;">0</p>
+                            <p style="font-size: 2rem;"><?php recordCount() ?></p>
                             <p>Records</p>
                         </div>
                         <div class="content">
                             <i class="fa-solid fa-table-list fa-4x"></i>
                         </div>
                     </div>
+                    <!-- These are just filler boxes ahead -->
                     <div class="grid-box">
                         <div class="content">
                             <p style="font-size: 2rem;">0</p>
-                            <p>Users</p>
+                            <p>Sample</p>
                         </div>
                         <div class="content">
-                            <i class="fa-solid fa-users fa-4x"></i>
+                            <i class="fa-solid fa-folder-open fa-4x"></i>
                         </div>
                     </div>
                     <div class="grid-box">
                         <div class="content">
                             <p style="font-size: 2rem;">0</p>
-                            <p>Records</p>
+                            <p>Sample</p>
                         </div>
                         <div class="content">
-                            <i class="fa-solid fa-table-list fa-4x"></i>
+                            <i class="fa-solid fa-book fa-4x"></i>
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <div class="content">
+                            <p style="font-size: 2rem;">0</p>
+                            <p>Sample</p>
+                        </div>
+                        <div class="content">
+                            <i class="fa-solid fa-bell fa-4x"></i>
+                        </div>
+                    </div>
+                    <div class="grid-box">
+                        <div class="content">
+                            <p style="font-size: 2rem;">0</p>
+                            <p>Sample</p>
+                        </div>
+                        <div class="content">
+                            <i class="fa-solid fa-address-card fa-4x"></i>
                         </div>
                     </div>
                 </div>
