@@ -47,42 +47,42 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 
 ## File Structure
 
-php-ajax-crud-with-login-authentication/
-├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   ├── ajax/
-│   │   │   ├── accounts_data.js
-│   │   │   ├── profile_data.js
-│   │   │   └── records_data.js
-│   │   └── alerts.js
-│   └── php/
-│       ├── crud/
-│       │   ├── accounts_crud.php
-│       │   ├── profile_crud.php
-│       │   └── records_crud.php
-│       ├── extensions/
-│       │   └── sidebar.php
-│       ├── modals/
-│       │   ├── accounts_modal.php
-│       │   ├── profile_modal.php
-│       │   └── records_modal.php
-│       ├── connection.php
-│       ├── dashboard_counter.php
-│       ├── login.php
-│       ├── login_validation.php
-│       └── logout.php
-├── data/
-│   ├── database.sql
-│   ├── extra.sql
-│   ├── tb_accounts.sql
-│   └── tb_records.sql
-└── screenshots/
-    ├── accounts.png
-    ├── dashboard.png
-    ├── index.png
-    ├── profile.png
+php-ajax-crud-with-login-authentication/<br>
+├── assets/<br>
+│   ├── css/<br>
+│   │   └── style.css<br>
+│   ├── js/<br>
+│   │   ├── ajax/<br>
+│   │   │   ├── accounts_data.js<br>
+│   │   │   ├── profile_data.js<br>
+│   │   │   └── records_data.js<br>
+│   │   └── alerts.js<br>
+│   └── php/<br>
+│       ├── crud/<br>
+│       │   ├── accounts_crud.php<br>
+│       │   ├── profile_crud.php<br>
+│       │   └── records_crud.php<br>
+│       ├── extensions/<br>
+│       │   └── sidebar.php<br>
+│       ├── modals/<br>
+│       │   ├── accounts_modal.php<br>
+│       │   ├── profile_modal.php<br>
+│       │   └── records_modal.php<br>
+│       ├── connection.php<br>
+│       ├── dashboard_counter.php<br>
+│       ├── login.php<br>
+│       ├── login_validation.php<br>
+│       └── logout.php<br>
+├── data/<br>
+│   ├── database.sql<br>
+│   ├── extra.sql<br>
+│   ├── tb_accounts.sql<br>
+│   └── tb_records.sql<br>
+└── screenshots/<br>
+    ├── accounts.png<br>
+    ├── dashboard.png<br>
+    ├── index.png<br>
+    ├── profile.png<br>
     └── records.png
 
 ## Getting Started
@@ -98,4 +98,4 @@ php-ajax-crud-with-login-authentication/
 
 ## Author
 
-- Website - [Red Pangilinan](https://redpangilinan.github.io/portfolio/)
+- [Red Pangilinan](https://redpangilinan.github.io/portfolio/)
