@@ -19,12 +19,12 @@ autoLogin();
     <title>Sign in</title>
 </head>
 
-<body>
+<body class="bg-secondary">
     <!-- Sign In -->
     <form action="index.php" method="post">
         <div class="login-container">
             <div class="box">
-                <div class="login-content">
+                <div class="login-content bg-white rounded-1">
                     <h1>Sign in</h1>
                     <input type="text" name="username" placeholder="Username" class="form-control">
                     <input type="password" name="password" placeholder="Password" class="form-control">
