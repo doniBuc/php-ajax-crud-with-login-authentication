@@ -16,6 +16,15 @@ function addAlert() {
     });
 }
 
+// Alert when a record has been deleted
+function deleteAlert() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Record Deleted!',
+        text: 'The record has been deleted successfully!',
+    });
+}
+
 // Alert when an error occurs
 function errorAlert() {
     Swal.fire({

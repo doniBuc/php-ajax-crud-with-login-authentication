@@ -1,31 +1,46 @@
 $(document).ready(function () {
-    // Displays data with search function
+    // Calls the respective constants when necessary
     displayTable();
     $("#search_records").keyup(function () {
         displayTable();
     });
 
-    // Displays data in edit modal
     $(document).on("click", ".edit-data", function () {
         let primary_id = $(this).data('id');
         displayEdit(primary_id);
     });
 
-    // Adds a new data
     $("#form_add_record").submit(function (e) {
         e.preventDefault();
-        insert();
+        insertData();
     });
 
-    // Updates the data
     $("#form_edit_record").submit(function (e) {
         e.preventDefault();
-        update();
+        updateData();
+    });
+
+    // Show confirmation first before deleting data
+    $(document).on("click", ".delete-data", function () {
+        let delete_id = $(this).data('id');
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteData(delete_id);
+            }
+        })
     });
 });
 
 // ========== Constants ==========
-// Loads the data and enables search functionality
+// Displays data with search function
 const displayTable = () => {
     let input = $("#search_records").val();
     $.ajax({
@@ -40,6 +55,7 @@ const displayTable = () => {
     });
 }
 
+// Displays data in edit modal
 const displayEdit = (primary_id) => {
     $.ajax({
         url: "./assets/php/modals/records_modal.php",
@@ -53,8 +69,8 @@ const displayEdit = (primary_id) => {
     });
 }
 
-// Fetch the data from the form and send it to the crud processing file to edit data
-const insert = () => {
+// Adds a new data
+const insertData = () => {
     let record = $("#record").val();
     let details = $("#details").val();
     $.ajax({
@@ -76,8 +92,8 @@ const insert = () => {
     });
 }
 
-// Fetch the data from the form and send it to the crud processing file to edit data
-const update = () => {
+// Updates the data
+const updateData = () => {
     let primary_id = $("#primary_id").val();
     let edit_record = $("#edit_record").val();
     let edit_details = $("#edit_details").val();
@@ -95,6 +111,25 @@ const update = () => {
             $('#editForm').modal('hide');
             if (data == "success") {
                 editAlert();
+            } else {
+                errorAlert();
+            }
+        }
+    });
+}
+
+// Deletes a data
+const deleteData = (delete_id) => {
+    $.ajax({
+        url: "./assets/php/crud/records_crud.php",
+        method: "POST",
+        data: {
+            delete_id: delete_id,
+        },
+        success: function (data) {
+            displayTable();
+            if (data == "success") {
+                deleteAlert();
             } else {
                 errorAlert();
             }

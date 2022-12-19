@@ -21,8 +21,8 @@ if(isset($_POST['input'])) {
             <td><?php echo $row["details"] ?></td>
             <td><?php echo $row["creation_date"] ?></td>
             <td>
-                <button data-id="<?php echo $row["record_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button data-id="<?php echo $row["record_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm"><i class="fas fa-edit"></i></button>
+                <button data-id="<?php echo $row["record_id"] ?>" class="delete-data btn btn-danger"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
         <?php
@@ -63,6 +63,18 @@ if (isset($_POST['primary_id'])
     $edit_record = mysqli_real_escape_string($conn, $_POST['edit_record']);
     $edit_details = mysqli_real_escape_string($conn, $_POST['edit_details']);
     $sql = "UPDATE tb_records SET record='$edit_record', details='$edit_details' WHERE record_id='$primary_id'";
+    if (mysqli_query($conn, $sql)) {
+        echo "success";
+    } else {
+        echo "error";
+    }
+    mysqli_close($conn);
+}
+
+if (isset($_POST['delete_id'])) {
+    include '../connection.php';
+    $primary_id = $_POST['delete_id'];
+    $sql = "DELETE FROM tb_records WHERE record_id = $primary_id";
     if (mysqli_query($conn, $sql)) {
         echo "success";
     } else {
