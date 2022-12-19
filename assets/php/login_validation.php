@@ -14,4 +14,11 @@ function autoLogin() {
         exit();
     }
 }
+
+// Prevents access if the account is not an admin
+function privateAccess() {
+    if ($_SESSION['account_type'] != "Admin") {
+        header('Location: dashboard.php');
+    }
+}
 ?>
