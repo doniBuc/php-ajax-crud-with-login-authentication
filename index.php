@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "./assets/php/login_validation.php";
-auto_login();
+autoLogin();
 ?>
 
 <!DOCTYPE html>
