@@ -32,21 +32,37 @@ validateSession();
                         <hr>
                 </header>
                 <!-- Data Table w/ Search -->
-                <input type="text" class="form-control" id="search_records" placeholder="Search">
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Record</th>
-                                <th>Details</th>
-                                <th>Creation Date</th>
-                                <th>Modify</th>
-                            </tr>
-                        </thead>
-                        <tbody id="search_results">
-                        </tbody>
-                    </table>
+                <div class="datatable-container">
+                    <form class="card">
+                        <h1 class="fs-4">Add Record</h1>
+                        <div class="mb-3">
+                            <label for="record" class="form-label">Record</label>
+                            <input type="text" class="form-control" id="record" name="record" placeholder="Record">
+                        </div>
+                        <div class="mb-3">
+                            <label for="details">Details</label>
+                            <textarea class="form-control" id="details" rows="3" placeholder="Details"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <div class="w-100">
+                        <input type="text" class="form-control" id="search_records" placeholder="Search">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Record</th>
+                                        <th>Details</th>
+                                        <th>Creation Date</th>
+                                        <th>Modify</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="search_results">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +77,7 @@ validateSession();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Edit Form -->
-                <form action="./accounts.php" method="post">
+                <form>
                     <div class="modal-body">
                     </div>
                     <div class="modal-footer">
