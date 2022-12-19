@@ -21,7 +21,7 @@ if(isset($_POST['input'])) {
             <td><?php echo $row["details"] ?></td>
             <td><?php echo $row["creation_date"] ?></td>
             <td>
-                <button data-id="<?php echo $row["record_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editForm"><i class="fas fa-edit"></i></button>
+                <button data-id="<?php echo $row["record_id"] ?>" class="edit-data btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
                 <button data-id="<?php echo $row["record_id"] ?>" class="delete-data btn btn-danger"><i class="fas fa-trash"></i></button>
             </td>
         </tr>
@@ -53,7 +53,7 @@ if (isset($_POST['record'])
     mysqli_close($conn);
 }
 
-// Updates the data
+// Updates an existing data
 if (isset($_POST['primary_id'])
 && isset($_POST['edit_record'])
 && isset($_POST['edit_details'])) {
