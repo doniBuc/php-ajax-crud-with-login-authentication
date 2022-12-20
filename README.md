@@ -16,6 +16,16 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 - [Author](#author)
 
 ## Overview
+
+### Features
+- Login and Registration
+- Page Access Validation - Prevents users to access admin only pages
+- Sessions and Cookies - Auto Login and Logout
+- Full CRUD Operations
+- Live Data Tables with AJAX
+- Live Search with AJAX
+- Responsive UI
+
 ### Screenshots
 
 - Login Page
