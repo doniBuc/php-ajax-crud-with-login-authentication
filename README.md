@@ -45,6 +45,7 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 - AJAX
 - [JQuery](https://jquery.com/)
 - [Bootstrap](https://getbootstrap.com/)
+- [SweetAlert2](https://sweetalert2.github.io/)
 
 ## File Structure
 
