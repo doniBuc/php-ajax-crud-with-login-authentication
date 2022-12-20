@@ -37,13 +37,14 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 ## Tech Stack
 
 ### Languages
-* [![PHP][php.net]][https://www.php.net/]
-* [![JavaScript][javascript.com]][https://www.javascript.com/]
-* [![CSS][css-tricks.com/]][https://css-tricks.com/]
+- [PHP](https://www.php.net/)
+- [JavaScript](https://www.javascript.com/)
+- CSS
 
 ### Frameworks/Libraries
-* [![JQuery][JQuery.com]][JQuery-url]
-* [![Bootstrap][Bootstrap.com]][https://getbootstrap.com/]
+- AJAX
+- [JQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## File Structure
 
