@@ -42,7 +42,7 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 * [![CSS][css-tricks.com/]][https://css-tricks.com/]
 
 ### Frameworks/Libraries
-* [![JQuery][JQuery.com]][https://jquery.com/]
+* [![JQuery][JQuery.com]][JQuery-url]
 * [![Bootstrap][Bootstrap.com]][https://getbootstrap.com/]
 
 ## File Structure
