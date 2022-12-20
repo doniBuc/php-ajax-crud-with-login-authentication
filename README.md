@@ -47,7 +47,7 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 
 ## File Structure
 
-'''
+```
 php-ajax-crud-with-login-authentication/<br>
 ├── assets/<br>
 │   ├── css/<br>
@@ -85,7 +85,7 @@ php-ajax-crud-with-login-authentication/<br>
     ├── index.png<br>
     ├── profile.png<br>
     └── records.png
-'''
+```
 
 ## Getting Started
 
