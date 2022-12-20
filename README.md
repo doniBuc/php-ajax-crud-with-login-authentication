@@ -6,15 +6,14 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 
 - [Overview](#overview)
   - [Screenshots](#screenshots)
+  - [File Structure](#file-structure)
 - [Tech Stack](#tech-stack)
   - [Languages](#built-with)
   - [Frameworks/Libraries](#frameworks/libraries)
-- [File Structure](#file-structure)
 - [Getting Started](#getting-started)
   - [Installing](#installing)
   - [How to use](#how-to-use)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 ### Screenshots
@@ -34,20 +33,7 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 - Records
 ![](./screenshots/records.png)
 
-## Tech Stack
-
-### Languages
-- [PHP](https://www.php.net/)
-- [JavaScript](https://www.javascript.com/)
-- CSS
-
-### Frameworks/Libraries
-- AJAX
-- [JQuery](https://jquery.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [SweetAlert2](https://sweetalert2.github.io/)
-
-## File Structure
+### File Structure
 
 ```
 php-ajax-crud-with-login-authentication/
@@ -88,6 +74,19 @@ php-ajax-crud-with-login-authentication/
     ├── profile.png
     └── records.png
 ```
+
+## Tech Stack
+
+### Languages
+- [PHP](https://www.php.net/)
+- [JavaScript](https://www.javascript.com/)
+- CSS
+
+### Frameworks/Libraries
+- AJAX
+- [JQuery](https://jquery.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [SweetAlert2](https://sweetalert2.github.io/)
 
 ## Getting Started
 
