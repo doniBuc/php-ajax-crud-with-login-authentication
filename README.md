@@ -67,12 +67,18 @@ php-ajax-crud-with-login-authentication/
 │   ├── extra.sql
 │   ├── tb_accounts.sql
 │   └── tb_records.sql
-└── screenshots/
-    ├── accounts.png
-    ├── dashboard.png
-    ├── index.png
-    ├── profile.png
-    └── records.png
+├── screenshots/
+│   ├── accounts.png
+│   ├── dashboard.png
+│   ├── index.png
+│   ├── profile.png
+│   └── records.png
+├── README.md
+├── accounts.php
+├── dashboard.php
+├── index.php
+├── profile.php
+└── records.php
 ```
 
 ## Tech Stack
