@@ -1,6 +1,6 @@
 # PHP AJAX CRUD with Login Authentication
 
-Easy to use PHP CRUD with login authentication, live search and datatables using AJAX.
+Easy to use PHP CRUD with login authentication, live search and data tables using AJAX.
 
 ## Table of contents
 
