@@ -1,4 +1,4 @@
-# PHP CRUD with Login Authentication
+# PHP AJAX CRUD with Login Authentication
 
 Easy to use PHP CRUD with login authentication, live search and datatables using AJAX.
 
