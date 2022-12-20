@@ -108,7 +108,9 @@ php-ajax-crud-with-login-authentication/
 
 ### How to use
 
-* Simply open the source code with preferred IDE
+* Simply open the source code with your preferred IDE
+* Import all the .sql files from the data folder or use your own database
+* Change connection.php to match your database configuration
 * Start developing your project
 
 ## Author
