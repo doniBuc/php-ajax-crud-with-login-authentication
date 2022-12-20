@@ -5,6 +5,7 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 ## Table of contents
 
 - [Overview](#overview)
+  - [Features](#features)
   - [Screenshots](#screenshots)
   - [File Structure](#file-structure)
 - [Tech Stack](#tech-stack)
@@ -28,19 +29,14 @@ Easy to use PHP CRUD with login authentication, live search and datatables using
 
 ### Screenshots
 
-- Login Page
 ![](./screenshots/index.png)
 
-- Dashboard
 ![](./screenshots/dashboard.png)
 
-- Profile
 ![](./screenshots/profile.png)
 
-- Accounts
 ![](./screenshots/accounts.png)
 
-- Records
 ![](./screenshots/records.png)
 
 ### File Structure
