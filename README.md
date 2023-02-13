@@ -104,7 +104,7 @@ php-ajax-crud-with-login-authentication/
 
 ### Installing
 
-* Source code will be available once purchased
+* Simply create a new repository from this template
 
 ### How to use
 
